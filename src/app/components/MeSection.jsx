@@ -33,7 +33,7 @@ const MeSection = () => {
                         </button>
                     </Link>
                     {/* Link to the PDF for downloading */}
-                    <Link href="/my-cv.pdf" download>
+                    <Link href="/AleynaCV.pdf" download>
                         <button className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-pink-500 to-pink-500 hover:bg-slate-800 text-white mt-3'>
                             <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>Download CV</span>
                         </button>

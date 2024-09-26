@@ -63,9 +63,18 @@ const ProjectCard = ({ images = [], title, description, language, gitUrl, id }) 
       <div className="flex items-center mt-5 justify-between">
         <p className="text-pink-500 mr-4 text-sm">{language}</p>
         <div className="flex items-center gap-3">
-        <Link href={gitUrl}>
-          <Image src={GithubIcon} alt="GitHub Icon" width={32} height={32} className="hover:brightness-125 transition-all duration-300" />
-        </Link>
+              {/* Conditionally render GitHub icon if gitUrl exists and is not "/" */}
+              {gitUrl && gitUrl !== "/" && (
+                <Link href={gitUrl}>
+                  <Image
+                    src={GithubIcon}
+                    alt="GitHub Icon"
+                    width={32}
+                    height={32}
+                    className="hover:brightness-125 transition-all duration-300"
+                  />
+                </Link>
+              )}
         <Link href={`/projects/${id}`}>
           <Image src={EyeOpen} alt="Preview Icon" width={32} height={32} className="hover:brightness-125 transition-all duration-300"/>
        </Link>

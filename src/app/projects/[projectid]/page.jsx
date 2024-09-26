@@ -22,29 +22,32 @@ export default function ProjectDetail({ params }) {
     <div className="bg-[#121212] text-white py-8 px-4 md:px-16">
 
       <Link href="/">
-          <Image 
-            src={BackArrow} 
-            alt="Back Arrow" 
-            width={32} 
-            height={32} 
-            className="text-white flex items-center mb-6 hover:scale-125 transition-all duration-300" 
-          />
-        </Link>
+        <Image 
+          src={BackArrow} 
+          alt="Back Arrow" 
+          width={32} 
+          height={32} 
+          className="text-white flex items-center mb-6 hover:scale-125 transition-all duration-300" 
+        />
+      </Link>
 
-        <div className="border-b border-[#333] mb-8"></div>
+      <div className="border-b border-[#333] mb-8"></div>
 
-      
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-4xl font-bold">{project.title}</h1>
-        <Link href={project.gitUrl}>
-          <Image 
-            src={GithubIcon} 
-            alt="GitHub Icon" 
-            width={32} 
-            height={32} 
-            className="hover:brightness-125 transition-all duration-300" 
-          />
-        </Link>
+
+        {/* Conditionally render GitHub icon if gitUrl exists and is not "/" */}
+        {project.gitUrl && project.gitUrl !== "/" && (
+          <Link href={project.gitUrl}>
+            <Image 
+              src={GithubIcon} 
+              alt="GitHub Icon" 
+              width={32} 
+              height={32} 
+              className="hover:brightness-125 transition-all duration-300" 
+            />
+          </Link>
+        )}
       </div>
 
       <p className="text-[#ADB7BE] mb-6">{project.description}</p>
